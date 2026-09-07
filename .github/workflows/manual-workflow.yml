@@ -2,7 +2,7 @@ name: manual workflow
 on:
         workflow_dispatch: 
                 inputs:
-                        environments:
+                        environment:
                                 description: "Environment to deploy to"
                                 required: false
                                 default: "dev"
@@ -18,7 +18,7 @@ jobs:
                 steps:
                         - name: Print inputs
                           run: |
-                                  ehco "Environment: ${{ inputs.environments }}"
+                                  echo "Environment: ${{ inputs.environment }}"
                                   echo "Version: ${{ inputs.version }}"
 
 
