@@ -3,7 +3,7 @@ on:
         workflow_dispatch: 
                 inputs:
                         environments:
-                                discription: "Environment to deploy to"
+                                description: "Environment to deploy to"
                                 required: false
                                 default: "dev"
                                 type: string
@@ -18,7 +18,7 @@ jobs:
                 steps:
                         - name: Print inputs
                           run: |
-                                  ehco "Environment: ${{ inputs.environment }}"
+                                  ehco "Environment: ${{ inputs.environments }}"
                                   echo "Version: ${{ inputs.version }}"
 
 
