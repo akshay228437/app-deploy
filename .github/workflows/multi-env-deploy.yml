@@ -1,0 +1,32 @@
+name: Multi-Environment Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select deployment environment"
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy
+        run: |
+          echo "Deploying to ${{ inputs.environment }} environment"
+
+          if [ "${{ inputs.environment }}" = "dev" ]; then
+            echo "Running development deployment"
+          elif [ "${{ inputs.environment }}" = "staging" ]; then
+            echo "Running staging deployment"
+          elif [ "${{ inputs.environment }}" = "prod" ]; then
+            echo "Running production deployment"
+          fi
+
