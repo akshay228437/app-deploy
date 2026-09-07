@@ -1,6 +1,6 @@
 name: manual workflow
 on:
-        workflow_dispact:
+        workflow_dispatch: 
                 inputs:
                         environments:
                                 discription: "Environment to deploy to"
