@@ -1,0 +1,24 @@
+name: manual workflow
+on:
+        workflow_dispact:
+                inputs:
+                        environments:
+                                discription: "Environment to deploy to"
+                                required: false
+                                default: "dev"
+                                type: string
+                        version:
+                                description: "version to deploy"
+                                required: true
+                                type: string
+jobs:
+        manual-run:
+                runs-on: ubuntu-latest
+
+                steps:
+                        - name: Print inputs
+                          run: |
+                                  ehco "Environment: ${{ inputs.environment }}"
+                                  echo "Version: ${{ inputs.version }}"
+
+
